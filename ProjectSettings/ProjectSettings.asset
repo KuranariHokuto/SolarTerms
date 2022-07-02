@@ -378,8 +378,7 @@ PlayerSettings:
       m_Height: 60
       m_Kind: 2
       m_SubKind: iPhone
-    - m_Textures:
-      - {fileID: 0}
+    - m_Textures: []
       m_Width: 40
       m_Height: 40
       m_Kind: 2
@@ -390,8 +389,7 @@ PlayerSettings:
       m_Height: 40
       m_Kind: 2
       m_SubKind: iPad
-    - m_Textures:
-      - {fileID: 0}
+    - m_Textures: []
       m_Width: 20
       m_Height: 20
       m_Kind: 2
