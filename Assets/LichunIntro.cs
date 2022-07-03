@@ -5,15 +5,13 @@ using UnityEngine.UI;
 
 public class LichunIntro : MonoBehaviour
 {
-    public Texture lichunIntro0;
-    public Texture lichunIntro1;
-    public Texture lichunIntro2;
-    public Texture lichunIntro3;
+    public Texture[] lichunIntros;
+    public int size;
     private int index = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        size = lichunIntros.Length;
     }
 
     // Update is called once per frame
@@ -27,13 +25,9 @@ public class LichunIntro : MonoBehaviour
     void Change()
     {
         RawImage rawImage = GetComponent<RawImage>();
-        if (index == 0) {
-            rawImage.texture = this.lichunIntro1;
-        } else if (index == 1) {
-            rawImage.texture = this.lichunIntro2;
-        } else if (index == 2) {
-            rawImage.texture = this.lichunIntro3;
+        if (index < size - 1) {
+            rawImage.texture = lichunIntros[index + 1];
+            index++;
         }
-        index++;
     }
 }
