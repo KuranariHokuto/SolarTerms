@@ -26,19 +26,20 @@ public class ChooseFruit : MonoBehaviour
 
     void Change()
     {
-        chosenFruitLocation = int.Parse((string)name.Substring(9));
-        Debug.Log("Choose " + OpenFood.availableFruits[chosenFruitLocation]);
-        chosenFruit = OpenFood.availableFruits[chosenFruitLocation];
-        RawImage[] toggles = GetComponentsInChildren<RawImage>();
-        if (toggles.Length > 0) {
-            toggles[1].texture = chosenToggle;
-        }
-        for (int i = 0; i < 12; i++) {
-            GameObject fruitGrid = GameObject.Find("FruitGrid" + i);
+        RawImage[] toggles;
+        if (chosenFruitLocation != -1) {
+            GameObject fruitGrid = GameObject.Find("FruitGrid" + chosenFruitLocation);
             toggles = fruitGrid.GetComponentsInChildren<RawImage>();
             if (toggles.Length > 0 && toggles[1].texture.Equals(chosenToggle)) {
                 toggles[1].texture = notChosenToggle;
             }
+        }
+        chosenFruitLocation = int.Parse((string)name.Substring(9));
+        Debug.Log("Choose " + OpenFood.availableFruits[chosenFruitLocation]);
+        chosenFruit = OpenFood.availableFruits[chosenFruitLocation];
+        toggles = GetComponentsInChildren<RawImage>();
+        if (toggles.Length > 0) {
+            toggles[1].texture = chosenToggle;
         }
     }
 }

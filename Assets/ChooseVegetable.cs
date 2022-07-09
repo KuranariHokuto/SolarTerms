@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class ChooseVegetable : MonoBehaviour
 {
     public static int chosenVegetable = -1;
+    public static int chosenVegetableLocation = -1;
+    public Texture notChosenToggle;
+    public Texture chosenToggle;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +26,20 @@ public class ChooseVegetable : MonoBehaviour
 
     void Change()
     {
-        Debug.Log("Choose " + OpenFood.availableVegetables[int.Parse((string)name.Substring(13))]);
-        chosenVegetable = OpenFood.availableVegetables[int.Parse((string)name.Substring(13))];
+        RawImage[] toggles;
+        if (chosenVegetableLocation != -1) {
+            GameObject vegetableGrid = GameObject.Find("VegetableGrid" + chosenVegetableLocation);
+            toggles = vegetableGrid.GetComponentsInChildren<RawImage>();
+            if (toggles.Length > 0 && toggles[1].texture.Equals(chosenToggle)) {
+                toggles[1].texture = notChosenToggle;
+            }
+        }
+        chosenVegetableLocation = int.Parse((string)name.Substring(13));
+        Debug.Log("Choose " + OpenFood.availableVegetables[chosenVegetableLocation]);
+        chosenVegetable = OpenFood.availableVegetables[chosenVegetableLocation];
+        toggles = GetComponentsInChildren<RawImage>();
+        if (toggles.Length > 0) {
+            toggles[1].texture = chosenToggle;
+        }
     }
 }

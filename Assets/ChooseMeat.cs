@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class ChooseMeat : MonoBehaviour
 {
     public static int chosenMeat = -1;
+    public static int chosenMeatLocation = -1;
+    public Texture notChosenToggle;
+    public Texture chosenToggle;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +26,20 @@ public class ChooseMeat : MonoBehaviour
 
     void Change()
     {
-        Debug.Log("Choose " + OpenFood.availableMeats[int.Parse((string)name.Substring(8))]);
-        chosenMeat = OpenFood.availableMeats[int.Parse((string)name.Substring(8))];
+        RawImage[] toggles;
+        if (chosenMeatLocation != -1) {
+            GameObject meatGrid = GameObject.Find("MeatGrid" + chosenMeatLocation);
+            toggles = meatGrid.GetComponentsInChildren<RawImage>();
+            if (toggles.Length > 0 && toggles[1].texture.Equals(chosenToggle)) {
+                toggles[1].texture = notChosenToggle;
+            }
+        }
+        chosenMeatLocation = int.Parse((string)name.Substring(8));
+        Debug.Log("Choose " + OpenFood.availableMeats[chosenMeatLocation]);
+        chosenMeat = OpenFood.availableMeats[chosenMeatLocation];
+        toggles = GetComponentsInChildren<RawImage>();
+        if (toggles.Length > 0) {
+            toggles[1].texture = chosenToggle;
+        }
     }
 }
