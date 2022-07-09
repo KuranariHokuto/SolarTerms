@@ -1220,7 +1220,11 @@ MonoBehaviour:
   vegetableGrids: []
   meatGrids: []
   cornGrids: []
-  foodImages: []
+  foodImages:
+  - {fileID: 2800000, guid: 4db45e3f5dc18b2489f25c72dfd784f4, type: 3}
+  - {fileID: 2800000, guid: 40a101fdca5060f49a9eae68a9c9c68f, type: 3}
+  - {fileID: 2800000, guid: 0d18ecce85572354f9d4bdfef05f29d1, type: 3}
+  - {fileID: 2800000, guid: f955f58c3beec044686cbfd8f7cb7758, type: 3}
   availableFoods: 
   currentFruitCount: 0
   currentVegetableCount: 0
@@ -6388,7 +6392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1799769058
 RectTransform:
   m_ObjectHideFlags: 0

@@ -21,15 +21,19 @@ public class OpenFood : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fruitGrids = new GameObject[12];
         for (int i = 0; i < 12; i++) {
             fruitGrids[i] = GameObject.Find("FruitGrid" + i);
         }
+        vegetableGrids = new GameObject[12];
         for (int i = 0; i < 12; i++) {
             vegetableGrids[i] = GameObject.Find("VegetableGrid" + i);
         }
+        meatGrids = new GameObject[12];
         for (int i = 0; i < 12; i++) {
             meatGrids[i] = GameObject.Find("MeatGrid" + i);
         }
+        cornGrids = new GameObject[12];
         for (int i = 0; i < 12; i++) {
             cornGrids[i] = GameObject.Find("CornGrid" + i);
         }
