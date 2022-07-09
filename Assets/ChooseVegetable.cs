@@ -23,7 +23,7 @@ public class ChooseVegetable : MonoBehaviour
 
     void Change()
     {
-        Debug.Log("Choose " + OpenFood.availableVegetables[int.Parse((string)name.Substring(9))]);
-        chosenVegetable = OpenFood.availableVegetables[int.Parse((string)name.Substring(9))];
+        Debug.Log("Choose " + OpenFood.availableVegetables[int.Parse((string)name.Substring(13))]);
+        chosenVegetable = OpenFood.availableVegetables[int.Parse((string)name.Substring(13))];
     }
 }

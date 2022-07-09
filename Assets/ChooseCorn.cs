@@ -23,7 +23,7 @@ public class ChooseCorn : MonoBehaviour
 
     void Change()
     {
-        Debug.Log("Choose " + OpenFood.availableCorns[int.Parse((string)name.Substring(9))]);
-        chosenCorn = OpenFood.availableCorns[int.Parse((string)name.Substring(9))];
+        Debug.Log("Choose " + OpenFood.availableCorns[int.Parse((string)name.Substring(8))]);
+        chosenCorn = OpenFood.availableCorns[int.Parse((string)name.Substring(8))];
     }
 }
