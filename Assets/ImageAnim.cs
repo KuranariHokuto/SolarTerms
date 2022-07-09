@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Exit : MonoBehaviour
+public class ImageAnim : MonoBehaviour
 {
-
+    public SpriteRenderer sr;
+    public Image image;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,12 +16,6 @@ public class Exit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        image.sprite = sr.sprite;
     }
-
-    public void Click()
-    {
-        Application.Quit();
-    }
-
 }
