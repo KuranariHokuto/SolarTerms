@@ -21,16 +21,16 @@ public class OpenFood : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < 12; i++) {
             fruitGrids[i] = GameObject.Find("FruitGrid" + i);
         }
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < 12; i++) {
             vegetableGrids[i] = GameObject.Find("VegetableGrid" + i);
         }
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < 12; i++) {
             meatGrids[i] = GameObject.Find("MeatGrid" + i);
         }
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < 12; i++) {
             cornGrids[i] = GameObject.Find("CornGrid" + i);
         }
         currentFruitCount = 0;
@@ -56,26 +56,26 @@ public class OpenFood : MonoBehaviour
 
     public void InitFood()
     {
-        AddFood(1, "Fruit");
-        AddFood(3, "Fruit");
+        AddFood(0, "Fruit");
+        AddFood(2, "Fruit");
         inited = true;
     }
 
     public void AddFood(int foodIndex, string foodType)
     {
-        if ("Fruit".Equals(foodType) && currentFruitCount < 16) {
+        if ("Fruit".Equals(foodType) && currentFruitCount < 12) {
             RawImage rawImage = fruitGrids[currentFruitCount].GetComponent<RawImage>();
             rawImage.texture = foodImages[foodIndex];
             currentFruitCount++;
-        } else if ("Vegetable".Equals(foodType) && currentVegetableCount < 16) {
+        } else if ("Vegetable".Equals(foodType) && currentVegetableCount < 12) {
             RawImage rawImage = vegetableGrids[currentVegetableCount].GetComponent<RawImage>();
             rawImage.texture = foodImages[foodIndex];
             currentVegetableCount++;
-        } else if ("Meat".Equals(foodType) && currentMeatCount < 16) {
+        } else if ("Meat".Equals(foodType) && currentMeatCount < 12) {
             RawImage rawImage = meatGrids[currentMeatCount].GetComponent<RawImage>();
             rawImage.texture = foodImages[foodIndex];
             currentMeatCount++;
-        } else if ("Corn".Equals(foodType) && currentCornCount < 16) {
+        } else if ("Corn".Equals(foodType) && currentCornCount < 12) {
             RawImage rawImage = cornGrids[currentCornCount].GetComponent<RawImage>();
             rawImage.texture = foodImages[foodIndex];
             currentCornCount++;
