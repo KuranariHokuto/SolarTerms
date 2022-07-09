@@ -551,6 +551,7 @@ GameObject:
   - component: {fileID: 111808933}
   - component: {fileID: 111808935}
   - component: {fileID: 111808934}
+  - component: {fileID: 111808936}
   m_Layer: 5
   m_Name: Corn
   m_TagString: Untagged
@@ -613,6 +614,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111808932}
   m_CullTransparentMesh: 1
+--- !u!114 &111808936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111808932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d81bec32b3abb4abeecd473856e618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitCanvas: {fileID: 1134573418}
+  vegetableCanvas: {fileID: 1436536653}
+  meatCanvas: {fileID: 627312817}
+  cornCanvas: {fileID: 1770653433}
 --- !u!1 &112637505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,11 +1242,22 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 40a101fdca5060f49a9eae68a9c9c68f, type: 3}
   - {fileID: 2800000, guid: 0d18ecce85572354f9d4bdfef05f29d1, type: 3}
   - {fileID: 2800000, guid: f955f58c3beec044686cbfd8f7cb7758, type: 3}
-  availableFoods: 
+  - {fileID: 2800000, guid: e1407b0c2d5260c4a8c7ea6eb7d53aad, type: 3}
+  - {fileID: 2800000, guid: 4b9fd40ffa39c7d49882003229d20de4, type: 3}
+  - {fileID: 2800000, guid: effd58c88bb73f745810fde2e0143e2c, type: 3}
+  - {fileID: 2800000, guid: c69d5579688cd0f45acebfc5cf39dbf4, type: 3}
+  - {fileID: 2800000, guid: cec4288212ac8da43b07914b5b712ae8, type: 3}
+  - {fileID: 2800000, guid: 33b0ca409ea0e364b8c820ee6395bdca, type: 3}
+  - {fileID: 2800000, guid: cf0e9fa3ffe22ab41b713a50045a7a7a, type: 3}
+  - {fileID: 2800000, guid: d15c37111860ab14db81d7f98ef0a13e, type: 3}
   currentFruitCount: 0
   currentVegetableCount: 0
   currentMeatCount: 0
   currentCornCount: 0
+  fruitCanvas: {fileID: 1134573418}
+  vegetableCanvas: {fileID: 1436536653}
+  meatCanvas: {fileID: 627312817}
+  cornCanvas: {fileID: 1770653433}
   inited: 0
 --- !u!1 &265121633
 GameObject:
@@ -2756,6 +2784,7 @@ GameObject:
   - component: {fileID: 700430767}
   - component: {fileID: 700430769}
   - component: {fileID: 700430768}
+  - component: {fileID: 700430770}
   m_Layer: 5
   m_Name: Meat
   m_TagString: Untagged
@@ -2818,6 +2847,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700430766}
   m_CullTransparentMesh: 1
+--- !u!114 &700430770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700430766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d81bec32b3abb4abeecd473856e618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitCanvas: {fileID: 1134573418}
+  vegetableCanvas: {fileID: 1436536653}
+  meatCanvas: {fileID: 627312817}
+  cornCanvas: {fileID: 1770653433}
 --- !u!1 &702996398
 GameObject:
   m_ObjectHideFlags: 0
@@ -4136,6 +4181,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d81bec32b3abb4abeecd473856e618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fruitCanvas: {fileID: 1134573418}
+  vegetableCanvas: {fileID: 1436536653}
+  meatCanvas: {fileID: 627312817}
+  cornCanvas: {fileID: 1770653433}
 --- !u!1 &1192369243
 GameObject:
   m_ObjectHideFlags: 0
@@ -5345,6 +5394,7 @@ GameObject:
   - component: {fileID: 1462166822}
   - component: {fileID: 1462166824}
   - component: {fileID: 1462166823}
+  - component: {fileID: 1462166825}
   m_Layer: 5
   m_Name: Vegetable
   m_TagString: Untagged
@@ -5407,6 +5457,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462166821}
   m_CullTransparentMesh: 1
+--- !u!114 &1462166825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462166821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d81bec32b3abb4abeecd473856e618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitCanvas: {fileID: 1134573418}
+  vegetableCanvas: {fileID: 1436536653}
+  meatCanvas: {fileID: 627312817}
+  cornCanvas: {fileID: 1770653433}
 --- !u!1 &1465579451
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,15 +11,19 @@ public class OpenFood : MonoBehaviour
     public GameObject[] meatGrids;
     public GameObject[] cornGrids;
     public Texture[] foodImages;
-    public ArrayList availableFruits;
-    public ArrayList availableVegetables;
-    public ArrayList availableMeats;
-    public ArrayList availableCorns;
-    public int currentFruitCount;
-    public int currentVegetableCount;
-    public int currentMeatCount;
-    public int currentCornCount;
-    public bool inited;
+    public static List<int> availableFruits;
+    public static List<int> availableVegetables;
+    public static List<int> availableMeats;
+    public static List<int> availableCorns;
+    public static int currentFruitCount;
+    public static int currentVegetableCount;
+    public static int currentMeatCount;
+    public static int currentCornCount;
+    public GameObject fruitCanvas;
+    public GameObject vegetableCanvas;
+    public GameObject meatCanvas;
+    public GameObject cornCanvas;
+    public static bool inited;
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +32,10 @@ public class OpenFood : MonoBehaviour
         vegetableGrids = new GameObject[12];
         meatGrids = new GameObject[12];
         cornGrids = new GameObject[12];
-        availableFruits = new ArrayList();
-        availableVegetables = new ArrayList();
-        availableMeats = new ArrayList();
-        availableCorns = new ArrayList();
+        availableFruits = new List<int>();
+        availableVegetables = new List<int>();
+        availableMeats = new List<int>();
+        availableCorns = new List<int>();
         currentFruitCount = 0;
         currentVegetableCount = 0;
         currentMeatCount = 0;
@@ -55,6 +59,10 @@ public class OpenFood : MonoBehaviour
 
     public void InitFood()
     {
+        fruitCanvas.SetActive(true);
+        vegetableCanvas.SetActive(true);
+        meatCanvas.SetActive(true);
+        cornCanvas.SetActive(true);
         for (int i = 0; i < 12; i++) {
             fruitGrids[i] = GameObject.Find("FruitGrid" + i);
         }
@@ -67,9 +75,33 @@ public class OpenFood : MonoBehaviour
         for (int i = 0; i < 12; i++) {
             cornGrids[i] = GameObject.Find("CornGrid" + i);
         }
-        availableFruits.Add(2);
-        AddFood(0, "Fruit");
-        AddFood(2, "Fruit");
+        for (int i = 0; i < 4; i++) {
+            availableFruits.Add(i);
+        }
+        for (int i = 4; i < 8; i++) {
+            availableVegetables.Add(i);
+        }
+        for (int i = 8; i < 11; i++) {
+            availableMeats.Add(i);
+        }
+        for (int i = 11; i < 12; i++) {
+            availableCorns.Add(i);
+        }
+        for (int i = 0; i < availableFruits.Count; i++) {
+            AddFood(availableFruits[i], "Fruit");
+        }
+        for (int i = 0; i < availableVegetables.Count; i++) {
+            AddFood(availableVegetables[i], "Vegetable");
+        }
+        for (int i = 0; i < availableMeats.Count; i++) {
+            AddFood(availableMeats[i], "Meat");
+        }
+        for (int i = 0; i < availableCorns.Count; i++) {
+            AddFood(availableCorns[i], "Corn");
+        }
+        vegetableCanvas.SetActive(false);
+        meatCanvas.SetActive(false);
+        cornCanvas.SetActive(false);
         inited = true;
     }
 
