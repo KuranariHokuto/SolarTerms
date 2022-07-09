@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class ChooseFruit : MonoBehaviour
 {
     public static int chosenFruit = -1;
+    public static int chosenFruitLocation = -1;
+    public Texture notChosenToggle;
+    public Texture chosenToggle;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +26,19 @@ public class ChooseFruit : MonoBehaviour
 
     void Change()
     {
-        Debug.Log("Choose " + OpenFood.availableFruits[int.Parse((string)name.Substring(9))]);
-        chosenFruit = OpenFood.availableFruits[int.Parse((string)name.Substring(9))];
+        chosenFruitLocation = int.Parse((string)name.Substring(9));
+        Debug.Log("Choose " + OpenFood.availableFruits[chosenFruitLocation]);
+        chosenFruit = OpenFood.availableFruits[chosenFruitLocation];
+        RawImage[] toggles = GetComponentsInChildren<RawImage>();
+        if (toggles.Length > 0) {
+            toggles[1].texture = chosenToggle;
+        }
+        for (int i = 0; i < 12; i++) {
+            GameObject fruitGrid = GameObject.Find("FruitGrid" + i);
+            toggles = fruitGrid.GetComponentsInChildren<RawImage>();
+            if (toggles.Length > 0 && toggles[1].texture.Equals(chosenToggle)) {
+                toggles[1].texture = notChosenToggle;
+            }
+        }
     }
 }
