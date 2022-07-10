@@ -74,6 +74,6 @@ public class TargetIndoor : MonoBehaviour
     public void TargetLost()
     {
         cookEatCanvas.SetActive(false);
-        // eatCanvas.SetActive(false);
+        eatCanvas.SetActive(false);
     }
 }
