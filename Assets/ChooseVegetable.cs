@@ -29,20 +29,22 @@ public class ChooseVegetable : MonoBehaviour
     {
         RawImage[] toggles;
         int chosenVegetableGrid = int.Parse((string)name.Substring(13));
-        int chosenVegetable = OpenFood.availableVegetables[chosenVegetableGrid];
-        if (!chosenVegetables.Contains(chosenVegetable)) {
-            chosenVegetables.Add(chosenVegetable);
-            chosenVegetableGrids.Add(chosenVegetableGrid);
-            toggles = GetComponentsInChildren<RawImage>();
-            if (toggles.Length > 0) {
-                toggles[1].texture = chosenToggle;
-            }
-        } else {
-            chosenVegetables.Remove(chosenVegetable);
-            chosenVegetableGrids.Remove(chosenVegetableGrid);
-            toggles = GetComponentsInChildren<RawImage>();
-            if (toggles.Length > 0) {
-                toggles[1].texture = notChosenToggle;
+        if (chosenVegetableGrid < OpenFood.availableVegetables.Count) {
+            int chosenVegetable = OpenFood.availableVegetables[chosenVegetableGrid];
+            if (!chosenVegetables.Contains(chosenVegetable)) {
+                chosenVegetables.Add(chosenVegetable);
+                chosenVegetableGrids.Add(chosenVegetableGrid);
+                toggles = GetComponentsInChildren<RawImage>();
+                if (toggles.Length > 0) {
+                    toggles[1].texture = chosenToggle;
+                }
+            } else {
+                chosenVegetables.Remove(chosenVegetable);
+                chosenVegetableGrids.Remove(chosenVegetableGrid);
+                toggles = GetComponentsInChildren<RawImage>();
+                if (toggles.Length > 0) {
+                    toggles[1].texture = notChosenToggle;
+                }
             }
         }
     }

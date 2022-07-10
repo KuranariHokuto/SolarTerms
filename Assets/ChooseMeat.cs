@@ -29,20 +29,22 @@ public class ChooseMeat : MonoBehaviour
     {
         RawImage[] toggles;
         int chosenMeatGrid = int.Parse((string)name.Substring(8));
-        int chosenMeat = OpenFood.availableMeats[chosenMeatGrid];
-        if (!chosenMeats.Contains(chosenMeat)) {
-            chosenMeats.Add(chosenMeat);
-            chosenMeatGrids.Add(chosenMeatGrid);
-            toggles = GetComponentsInChildren<RawImage>();
-            if (toggles.Length > 0) {
-                toggles[1].texture = chosenToggle;
-            }
-        } else {
-            chosenMeats.Remove(chosenMeat);
-            chosenMeatGrids.Remove(chosenMeatGrid);
-            toggles = GetComponentsInChildren<RawImage>();
-            if (toggles.Length > 0) {
-                toggles[1].texture = notChosenToggle;
+        if (chosenMeatGrid < OpenFood.availableMeats.Count) {
+            int chosenMeat = OpenFood.availableMeats[chosenMeatGrid];
+            if (!chosenMeats.Contains(chosenMeat)) {
+                chosenMeats.Add(chosenMeat);
+                chosenMeatGrids.Add(chosenMeatGrid);
+                toggles = GetComponentsInChildren<RawImage>();
+                if (toggles.Length > 0) {
+                    toggles[1].texture = chosenToggle;
+                }
+            } else {
+                chosenMeats.Remove(chosenMeat);
+                chosenMeatGrids.Remove(chosenMeatGrid);
+                toggles = GetComponentsInChildren<RawImage>();
+                if (toggles.Length > 0) {
+                    toggles[1].texture = notChosenToggle;
+                }
             }
         }
     }

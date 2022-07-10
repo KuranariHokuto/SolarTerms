@@ -36,21 +36,23 @@ public class ChooseFruit : MonoBehaviour
         //     }
         // }
         int chosenFruitGrid = int.Parse((string)name.Substring(9));
-        int chosenFruit = OpenFood.availableFruits[chosenFruitGrid];
-        if (!chosenFruits.Contains(chosenFruit)) {
-            chosenFruits.Add(chosenFruit);
-            chosenFruitGrids.Add(chosenFruitGrid);
-            toggles = GetComponentsInChildren<RawImage>();
-            if (toggles.Length > 0) {
-                toggles[1].texture = chosenToggle;
-            }
-        } else {
-            chosenFruits.Remove(chosenFruit);
-            chosenFruitGrids.Remove(chosenFruitGrid);
-            toggles = GetComponentsInChildren<RawImage>();
-            if (toggles.Length > 0) {
-                toggles[1].texture = notChosenToggle;
+        if (chosenFruitGrid < OpenFood.availableFruits.Count) {
+            int chosenFruit = OpenFood.availableFruits[chosenFruitGrid];
+            if (!chosenFruits.Contains(chosenFruit)) {
+                chosenFruits.Add(chosenFruit);
+                chosenFruitGrids.Add(chosenFruitGrid);
+                toggles = GetComponentsInChildren<RawImage>();
+                if (toggles.Length > 0) {
+                    toggles[1].texture = chosenToggle;
+                }
+            } else {
+                chosenFruits.Remove(chosenFruit);
+                toggles = GetComponentsInChildren<RawImage>();
+                if (toggles.Length > 0) {
+                    toggles[1].texture = notChosenToggle;
+                }
             }
         }
+        
     }
 }

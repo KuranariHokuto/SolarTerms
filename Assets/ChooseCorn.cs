@@ -29,20 +29,22 @@ public class ChooseCorn : MonoBehaviour
     {
         RawImage[] toggles;
         int chosenCornGrid = int.Parse((string)name.Substring(8));
-        int chosenCorn = OpenFood.availableCorns[chosenCornGrid];
-        if (!chosenCorns.Contains(chosenCorn)) {
-            chosenCorns.Add(chosenCorn);
-            chosenCornGrids.Add(chosenCornGrid);
-            toggles = GetComponentsInChildren<RawImage>();
-            if (toggles.Length > 0) {
-                toggles[1].texture = chosenToggle;
-            }
-        } else {
-            chosenCorns.Remove(chosenCorn);
-            chosenCornGrids.Remove(chosenCornGrid);
-            toggles = GetComponentsInChildren<RawImage>();
-            if (toggles.Length > 0) {
-                toggles[1].texture = notChosenToggle;
+        if (chosenCornGrid < OpenFood.availableCorns.Count) {
+            int chosenCorn = OpenFood.availableCorns[chosenCornGrid];
+            if (!chosenCorns.Contains(chosenCorn)) {
+                chosenCorns.Add(chosenCorn);
+                chosenCornGrids.Add(chosenCornGrid);
+                toggles = GetComponentsInChildren<RawImage>();
+                if (toggles.Length > 0) {
+                    toggles[1].texture = chosenToggle;
+                }
+            } else {
+                chosenCorns.Remove(chosenCorn);
+                chosenCornGrids.Remove(chosenCornGrid);
+                toggles = GetComponentsInChildren<RawImage>();
+                if (toggles.Length > 0) {
+                    toggles[1].texture = notChosenToggle;
+                }
             }
         }
     }

@@ -25,5 +25,11 @@ public class ChooseBook : MonoBehaviour
     {
         bookChosen.SetActive(true);
         phoneChosen.SetActive(false);
+        Invoke("EatOnBook", 0.5f);
+    }
+
+    public void EatOnBook()
+    {
+        Debug.Log("EatOnBook");
     }
 }

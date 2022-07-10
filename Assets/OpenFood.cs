@@ -25,6 +25,7 @@ public class OpenFood : MonoBehaviour
     public GameObject meatCanvas;
     public GameObject cornCanvas;
     public static bool inited;
+    public Texture notChosenToggle;
 
     // Start is called before the first frame update
     void Start()
@@ -113,18 +114,34 @@ public class OpenFood : MonoBehaviour
         if ("Fruit".Equals(foodType) && currentFruitCount < 12) {
             RawImage rawImage = fruitGrids[currentFruitCount].GetComponent<RawImage>();
             rawImage.texture = foodImages[foodIndex];
+            RawImage[] toggles = fruitGrids[currentFruitCount].GetComponentsInChildren<RawImage>();
+            if (toggles.Length > 0) {
+                toggles[1].texture = notChosenToggle;
+            }
             currentFruitCount++;
         } else if ("Vegetable".Equals(foodType) && currentVegetableCount < 12) {
             RawImage rawImage = vegetableGrids[currentVegetableCount].GetComponent<RawImage>();
             rawImage.texture = foodImages[foodIndex];
+            RawImage[] toggles = vegetableGrids[currentVegetableCount].GetComponentsInChildren<RawImage>();
+            if (toggles.Length > 0) {
+                toggles[1].texture = notChosenToggle;
+            }
             currentVegetableCount++;
         } else if ("Meat".Equals(foodType) && currentMeatCount < 12) {
             RawImage rawImage = meatGrids[currentMeatCount].GetComponent<RawImage>();
             rawImage.texture = foodImages[foodIndex];
+            RawImage[] toggles = meatGrids[currentMeatCount].GetComponentsInChildren<RawImage>();
+            if (toggles.Length > 0) {
+                toggles[1].texture = notChosenToggle;
+            }
             currentMeatCount++;
         } else if ("Corn".Equals(foodType) && currentCornCount < 12) {
             RawImage rawImage = cornGrids[currentCornCount].GetComponent<RawImage>();
             rawImage.texture = foodImages[foodIndex];
+            RawImage[] toggles = cornGrids[currentCornCount].GetComponentsInChildren<RawImage>();
+            if (toggles.Length > 0) {
+                toggles[1].texture = notChosenToggle;
+            }
             currentCornCount++;
         }
     }
