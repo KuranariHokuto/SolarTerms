@@ -12,6 +12,7 @@ public class OpenFood : MonoBehaviour
     public GameObject[] meatGrids;
     public GameObject[] cornGrids;
     public Texture[] foodImages;
+    public static List<int> targetedFoods;
     public static List<int> availableFruits;
     public static List<int> availableVegetables;
     public static List<int> availableMeats;
@@ -34,6 +35,7 @@ public class OpenFood : MonoBehaviour
         vegetableGrids = new GameObject[12];
         meatGrids = new GameObject[12];
         cornGrids = new GameObject[12];
+        targetedFoods = new List<int>();
         availableFruits = new List<int>();
         availableVegetables = new List<int>();
         availableMeats = new List<int>();
@@ -57,8 +59,10 @@ public class OpenFood : MonoBehaviour
 
     void Change()
     {
-        foodBackground.SetActive(true);
-        if (!inited) InitFood();
+        if (targetedFoods.Count >= 4) {
+            foodBackground.SetActive(true);
+            if (!inited) InitFood();
+        }
     }
 
     public void InitFood()

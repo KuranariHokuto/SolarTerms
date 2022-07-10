@@ -24,15 +24,16 @@ public class Menu : MonoBehaviour
                 // }
                 Transform innerCanvas = transform.Find("InnerCanvas");
                 innerCanvas.Translate(0, translation * 10, 0);
-                if (innerCanvas.transform.position.y > 1200) innerCanvas.Translate(0, -2400, 0);
+                // 这样是不行的
+                // if (innerCanvas.transform.position.y > 1200) innerCanvas.Translate(0, -2400, 0);
                 Transform menuCanvas = transform.Find("MenuCanvas");
                 menuCanvas.Translate(0, translation * 6, 0);
                 Transform middleCanvas = transform.Find("MiddleCanvas");
                 middleCanvas.Translate(0, translation * 4, 0);
-                if (middleCanvas.transform.position.y > 1200) middleCanvas.Translate(0, -2400, 0);
+                // if (middleCanvas.transform.position.y > 1200) middleCanvas.Translate(0, -2400, 0);
                 Transform outerCanvas = transform.Find("OuterCanvas");
                 outerCanvas.Translate(0, translation * 2, 0);
-                if (outerCanvas.transform.position.y > 1200) outerCanvas.Translate(0, -2400, 0);
+                // if (outerCanvas.transform.position.y > 1200) outerCanvas.Translate(0, -2400, 0);
             }
         }
     }

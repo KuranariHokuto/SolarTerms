@@ -11,6 +11,7 @@ public class LichunIntro : MonoBehaviour
     public static int index = 0;
     public GameObject introCanvas;
     public GameObject indoorCanvas;
+    public GameObject promptCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,14 +31,15 @@ public class LichunIntro : MonoBehaviour
         RawImage rawImage = lichunIntro.GetComponent<RawImage>();
         if (index == 0) {
             rawImage.texture = lichunIntros[index + 1];
-            transform.Translate(new Vector3(-400, 0, 0), Space.Self);
+            transform.Translate(new Vector3(-500, 0, 0), Space.Self);
             index++;
         } else if (index == 1) {
             rawImage.texture = lichunIntros[index + 1];
-            transform.Translate(new Vector3(400, 0, 0), Space.Self);
+            transform.Translate(new Vector3(500, 0, 0), Space.Self);
             index++;
         } else {
             indoorCanvas.SetActive(true);
+            promptCanvas.SetActive(true);
             introCanvas.SetActive(false);
         }
     }
