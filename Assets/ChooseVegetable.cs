@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 public class ChooseVegetable : MonoBehaviour
 {
-    public static int chosenVegetable = -1;
-    public static int chosenVegetableLocation = -1;
+    public static List<int> chosenVegetables;
+    public static List<int> chosenVegetableGrids;
     public Texture notChosenToggle;
     public Texture chosenToggle;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        chosenVegetables = new List<int>();
+        chosenVegetableGrids = new List<int>();
     }
 
     // Update is called once per frame
@@ -27,19 +28,22 @@ public class ChooseVegetable : MonoBehaviour
     void Change()
     {
         RawImage[] toggles;
-        if (chosenVegetableLocation != -1) {
-            GameObject vegetableGrid = GameObject.Find("VegetableGrid" + chosenVegetableLocation);
-            toggles = vegetableGrid.GetComponentsInChildren<RawImage>();
-            if (toggles.Length > 0 && toggles[1].texture.Equals(chosenToggle)) {
+        int chosenVegetableGrid = int.Parse((string)name.Substring(9));
+        int chosenVegetable = OpenFood.availableVegetables[chosenVegetableGrid];
+        if (!chosenVegetables.Contains(chosenVegetable)) {
+            chosenVegetables.Add(chosenVegetable);
+            chosenVegetableGrids.Add(chosenVegetableGrid);
+            toggles = GetComponentsInChildren<RawImage>();
+            if (toggles.Length > 0) {
+                toggles[1].texture = chosenToggle;
+            }
+        } else {
+            chosenVegetables.Remove(chosenVegetable);
+            chosenVegetableGrids.Remove(chosenVegetableGrid);
+            toggles = GetComponentsInChildren<RawImage>();
+            if (toggles.Length > 0) {
                 toggles[1].texture = notChosenToggle;
             }
-        }
-        chosenVegetableLocation = int.Parse((string)name.Substring(13));
-        Debug.Log("Choose " + OpenFood.availableVegetables[chosenVegetableLocation]);
-        chosenVegetable = OpenFood.availableVegetables[chosenVegetableLocation];
-        toggles = GetComponentsInChildren<RawImage>();
-        if (toggles.Length > 0) {
-            toggles[1].texture = chosenToggle;
         }
     }
 }

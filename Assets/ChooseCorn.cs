@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 public class ChooseCorn : MonoBehaviour
 {
-    public static int chosenCorn = -1;
-    public static int chosenCornLocation = -1;
+    public static List<int> chosenCorns;
+    public static List<int> chosenCornGrids;
     public Texture notChosenToggle;
     public Texture chosenToggle;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        chosenCorns = new List<int>();
+        chosenCornGrids = new List<int>();
     }
 
     // Update is called once per frame
@@ -27,19 +28,22 @@ public class ChooseCorn : MonoBehaviour
     void Change()
     {
         RawImage[] toggles;
-        if (chosenCornLocation != -1) {
-            GameObject cornGrid = GameObject.Find("CornGrid" + chosenCornLocation);
-            toggles = cornGrid.GetComponentsInChildren<RawImage>();
-            if (toggles.Length > 0 && toggles[1].texture.Equals(chosenToggle)) {
+        int chosenCornGrid = int.Parse((string)name.Substring(9));
+        int chosenCorn = OpenFood.availableCorns[chosenCornGrid];
+        if (!chosenCorns.Contains(chosenCorn)) {
+            chosenCorns.Add(chosenCorn);
+            chosenCornGrids.Add(chosenCornGrid);
+            toggles = GetComponentsInChildren<RawImage>();
+            if (toggles.Length > 0) {
+                toggles[1].texture = chosenToggle;
+            }
+        } else {
+            chosenCorns.Remove(chosenCorn);
+            chosenCornGrids.Remove(chosenCornGrid);
+            toggles = GetComponentsInChildren<RawImage>();
+            if (toggles.Length > 0) {
                 toggles[1].texture = notChosenToggle;
             }
-        }
-        chosenCornLocation = int.Parse((string)name.Substring(8));
-        Debug.Log("Choose " + OpenFood.availableCorns[chosenCornLocation]);
-        chosenCorn = OpenFood.availableCorns[chosenCornLocation];
-        toggles = GetComponentsInChildren<RawImage>();
-        if (toggles.Length > 0) {
-            toggles[1].texture = chosenToggle;
         }
     }
 }

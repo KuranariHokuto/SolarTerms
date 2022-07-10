@@ -27,7 +27,7 @@ public class Choose : MonoBehaviour
     {
         RawImage rawImage = GetComponent<RawImage>();
         rawImage.texture = chosenImage;
-        if (ChooseFruit.chosenFruit == 2 && ChooseVegetable.chosenVegetable == 4 && ChooseMeat.chosenMeat == 9 && ChooseCorn.chosenCorn == 11) {
+        if (!ChooseFruit.chosenFruits.Contains(3)) {
             Debug.Log("The choice is correct.");
             foodBackground.SetActive(false);
         } else {

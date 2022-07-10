@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 public class ChooseFruit : MonoBehaviour
 {
-    public static int chosenFruit = -1;
-    public static int chosenFruitLocation = -1;
+    public static List<int> chosenFruits;
+    public static List<int> chosenFruitGrids;
     public Texture notChosenToggle;
     public Texture chosenToggle;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        chosenFruits = new List<int>();
+        chosenFruitGrids = new List<int>();
     }
 
     // Update is called once per frame
@@ -27,19 +28,29 @@ public class ChooseFruit : MonoBehaviour
     void Change()
     {
         RawImage[] toggles;
-        if (chosenFruitLocation != -1) {
-            GameObject fruitGrid = GameObject.Find("FruitGrid" + chosenFruitLocation);
-            toggles = fruitGrid.GetComponentsInChildren<RawImage>();
-            if (toggles.Length > 0 && toggles[1].texture.Equals(chosenToggle)) {
+        // if (chosenFruitGrid != -1) {
+        //     GameObject fruitGrid = GameObject.Find("FruitGrid" + chosenFruitGrid);
+        //     toggles = fruitGrid.GetComponentsInChildren<RawImage>();
+        //     if (toggles.Length > 0 && toggles[1].texture.Equals(chosenToggle)) {
+        //         toggles[1].texture = notChosenToggle;
+        //     }
+        // }
+        int chosenFruitGrid = int.Parse((string)name.Substring(9));
+        int chosenFruit = OpenFood.availableFruits[chosenFruitGrid];
+        if (!chosenFruits.Contains(chosenFruit)) {
+            chosenFruits.Add(chosenFruit);
+            chosenFruitGrids.Add(chosenFruitGrid);
+            toggles = GetComponentsInChildren<RawImage>();
+            if (toggles.Length > 0) {
+                toggles[1].texture = chosenToggle;
+            }
+        } else {
+            chosenFruits.Remove(chosenFruit);
+            chosenFruitGrids.Remove(chosenFruitGrid);
+            toggles = GetComponentsInChildren<RawImage>();
+            if (toggles.Length > 0) {
                 toggles[1].texture = notChosenToggle;
             }
-        }
-        chosenFruitLocation = int.Parse((string)name.Substring(9));
-        Debug.Log("Choose " + OpenFood.availableFruits[chosenFruitLocation]);
-        chosenFruit = OpenFood.availableFruits[chosenFruitLocation];
-        toggles = GetComponentsInChildren<RawImage>();
-        if (toggles.Length > 0) {
-            toggles[1].texture = chosenToggle;
         }
     }
 }
