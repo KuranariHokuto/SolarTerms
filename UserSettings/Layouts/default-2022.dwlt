@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Inspector
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 362.40002
     height: 730.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 290.4
     height: 512.8
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -382,22 +382,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Editor
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Editor
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\UnityProjects\SolarTerms
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: 54610000
-    m_LastClickedID: 24916
-    m_ExpandedIDs: 0000000052610000546100005661000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 4c610000
+    m_LastClickedID: 24908
+    m_ExpandedIDs: 000000004c6100004e6100005061000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -425,7 +425,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000526100005461000056610000
+    m_ExpandedIDs: 000000004c6100004e61000050610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -453,7 +453,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000fc5d0000f85d0000
+    m_ExpandedInstanceIDs: c6230000fc5d0000f85d000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -477,7 +477,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 150}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -516,7 +516,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 152.79999
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -552,10 +552,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 006dffff5e6dffffb070ffffc270ffffdc70fffff07dffff4e7effffa081ffffb281ffffcc81ffff2cfbffff685d0000945d0000325e0000a25e0000045f0000625f0000146000001e600000a660000044b100003eb3000056b40000e0b40000
+      scrollPos: {x: 0, y: 41.200012}
+      m_SelectedIDs: a0ec0300
+      m_LastClickedID: 257184
+      m_ExpandedIDs: 9ecffdffeecffdff54d3fdff66d3fdff80d3fdffe8dffdff38e0fdff9ee3fdffb0e3fdffcae3fdff9aebfdffeaebfdff50effdff62effdff7ceffdffe4fefdff34fffdff9a02feffac02feffc602feffe21cfeff0825feff5c25feffc228feffd428feffee28fefff839feff7643feffc843feff1247feff2447feff3e47feff4c4dfeffa04dfeff0651feff1851feff3251feffe859feff7a74feffbc79feff0c7afeff6e7dfeff807dfeff9a7dfeff12a2feff66a2feffc8a5feffdaa5fefff4a5feff30b9feff84b9feffcabcfeffdcbcfefff6bcfeff92c8feffe2c8feff44ccfeff56ccfeff70ccfeffb601ffff1a11ffff8011ffffde14fffff014ffff0a15ffff821dffffd61dffff3421ffff4621ffff6021ffff066fffff586fffff8a74ffffda74ffff2c78ffff3e78ffff5878ffff6a7fffffba7fffff0c83ffff1e83ffff3883ffff0ab9ffff5ab9ffffacbcffffbebcffffd8bcffff50f5ffffb0f5ffff02f9ffff14f9ffff2ef9ffff2efbffff30fbffff547200004e740000f075000080770000b078000084830000c4830000f484000020890000b4890000f48900001a8b00000ef40000b0f5000012f600002af70000b2f70000b8100100f81001009c11010028120100ac2901004c2b0100043901008e390100a63a0100083b0100643b0100163c0100203c0100a83c01006c9e0100089f010094a0010040a2010090b401007cb5010090b70100a4b70100d8b80100e6b8010050b9010070310200f8330200b23502002a5a0200aa5c02006c5e0200e4720200387502004c750200867602000e770200b4c2020020c5020006e702002ee7020042e70200aee90200c6e9020002eb020090eb0200dc370300ac380300d4380300e83803008c3a03005e3b0300743b0300b83c0300483d0300a0690300f66a03007a6c0300427503009a7603001e780300a0950300f6960300829803009ab2030010b3030080b303007cb403000ab50300f8bb030050bd0300dcbe030082cd0300dace030068d0030022e803007ae90300f2ea030008eb0300e8ec0300
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -837,9 +837,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 540.4718, y: 291.68018, z: 0.16723633}
+    m_Target: {x: -0.00515478, y: -0.0217098, z: -0.01455461}
     speed: 2
-    m_Value: {x: 540.4718, y: 291.68018, z: 0.16723633}
+    m_Value: {x: -0.00515478, y: -0.0217098, z: -0.01455461}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -864,7 +864,7 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     yGrid:
       m_Fade:
         m_Target: 1
@@ -880,18 +880,18 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.002999903, y: 0.0074999016, z: 0.000022499511, w: 0.9999681}
+    m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
     speed: 2
-    m_Value: {x: -0.0029999008, y: 0.007499896, z: 0.000022499495, w: 0.9999674}
+    m_Value: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_Size:
-    m_Target: 290.7657
+    m_Target: 0.07071068
     speed: 2
-    m_Value: 278.2447
+    m_Value: 0.07071068
   m_Ortho:
     m_Target: 1
     speed: 2

@@ -57,7 +57,7 @@ public class TargetIndoor : MonoBehaviour
         // text.GetComponent<Text>().text += "; ";
         foreach (Transform food in eatCanvas.transform)
         {
-            text.GetComponent<Text>().text += food.gameObject.name;
+            // text.GetComponent<Text>().text += food.gameObject.name;
             if (ChooseFruit.chosenFruits != null && ChooseFruit.chosenFruits.Contains(int.Parse(food.gameObject.name))
                 || ChooseVegetable.chosenVegetables != null && ChooseVegetable.chosenVegetables.Contains(int.Parse(food.gameObject.name))
                 || ChooseMeat.chosenMeats != null && ChooseMeat.chosenMeats.Contains(int.Parse(food.gameObject.name))
