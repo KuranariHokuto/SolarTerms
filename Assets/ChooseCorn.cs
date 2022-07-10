@@ -28,7 +28,7 @@ public class ChooseCorn : MonoBehaviour
     void Change()
     {
         RawImage[] toggles;
-        int chosenCornGrid = int.Parse((string)name.Substring(9));
+        int chosenCornGrid = int.Parse((string)name.Substring(8));
         int chosenCorn = OpenFood.availableCorns[chosenCornGrid];
         if (!chosenCorns.Contains(chosenCorn)) {
             chosenCorns.Add(chosenCorn);

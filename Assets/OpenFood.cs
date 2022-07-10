@@ -41,6 +41,7 @@ public class OpenFood : MonoBehaviour
         currentMeatCount = 0;
         currentCornCount = 0;
         inited = false;
+        foodBackground.SetActive(false);
     }
 
     // Update is called once per frame

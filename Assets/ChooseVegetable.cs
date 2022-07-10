@@ -28,7 +28,7 @@ public class ChooseVegetable : MonoBehaviour
     void Change()
     {
         RawImage[] toggles;
-        int chosenVegetableGrid = int.Parse((string)name.Substring(9));
+        int chosenVegetableGrid = int.Parse((string)name.Substring(13));
         int chosenVegetable = OpenFood.availableVegetables[chosenVegetableGrid];
         if (!chosenVegetables.Contains(chosenVegetable)) {
             chosenVegetables.Add(chosenVegetable);

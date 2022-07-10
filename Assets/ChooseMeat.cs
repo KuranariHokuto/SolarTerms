@@ -28,7 +28,7 @@ public class ChooseMeat : MonoBehaviour
     void Change()
     {
         RawImage[] toggles;
-        int chosenMeatGrid = int.Parse((string)name.Substring(9));
+        int chosenMeatGrid = int.Parse((string)name.Substring(8));
         int chosenMeat = OpenFood.availableMeats[chosenMeatGrid];
         if (!chosenMeats.Contains(chosenMeat)) {
             chosenMeats.Add(chosenMeat);
