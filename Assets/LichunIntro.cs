@@ -8,7 +8,7 @@ public class LichunIntro : MonoBehaviour
     public GameObject lichunIntro;
     public Texture[] lichunIntros;
     public int size;
-    public int index = 0;
+    public static int index = 0;
     public GameObject introCanvas;
     public GameObject indoorCanvas;
     // Start is called before the first frame update

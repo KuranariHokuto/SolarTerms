@@ -11,7 +11,11 @@ public class ReturnToIntro : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (LichunIntro.index == 0) {
+            introCanvas.SetActive(true);
+            outdoorCanvas.SetActive(false);
+            indoorCanvas.SetActive(false);
+        }
     }
 
     // Update is called once per frame
