@@ -9,7 +9,7 @@ public class TargetIndoor : MonoBehaviour
     public GameObject cookEatCanvas;
     public GameObject cook;
     public GameObject eatCanvas;
-    public GameObject text;
+    // public GameObject text;
 
     // Start is called before the first frame update
     void Start()
