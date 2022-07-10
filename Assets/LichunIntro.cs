@@ -28,8 +28,13 @@ public class LichunIntro : MonoBehaviour
     void Change()
     {
         RawImage rawImage = lichunIntro.GetComponent<RawImage>();
-        if (index < size - 1) {
+        if (index == 0) {
             rawImage.texture = lichunIntros[index + 1];
+            transform.Translate(new Vector3(-400, 0, 0), Space.Self);
+            index++;
+        } else if (index == 1) {
+            rawImage.texture = lichunIntros[index + 1];
+            transform.Translate(new Vector3(400, 0, 0), Space.Self);
             index++;
         } else {
             indoorCanvas.SetActive(true);
