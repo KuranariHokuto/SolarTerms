@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class OpenFood : MonoBehaviour
 {
     public GameObject foodBackground;
+    public GameObject cookAndEat;
     public GameObject[] fruitGrids;
     public GameObject[] vegetableGrids;
     public GameObject[] meatGrids;
@@ -42,6 +43,7 @@ public class OpenFood : MonoBehaviour
         currentCornCount = 0;
         inited = false;
         foodBackground.SetActive(false);
+        cookAndEat.SetActive(false);
     }
 
     // Update is called once per frame
