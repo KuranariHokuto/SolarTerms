@@ -8,9 +8,22 @@ public class ReturnToIntro : MonoBehaviour
     public GameObject introCanvas;
     public GameObject indoorCanvas;
     public GameObject outdoorCanvas;
+    public GameObject targetIndoor;
+    public GameObject targetOutdoor;
+    public GameObject target0;
+    public GameObject target2;
+    public GameObject target3;
+    public GameObject target4;
+
     // Start is called before the first frame update
     void Start()
     {
+        targetIndoor.SetActive(false);
+        targetOutdoor.SetActive(false);
+        target0.SetActive(true);
+        target2.SetActive(true);
+        target3.SetActive(true);
+        target4.SetActive(true);
         if (LichunIntro.index == 0) {
             introCanvas.SetActive(true);
             outdoorCanvas.SetActive(false);

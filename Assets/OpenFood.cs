@@ -24,6 +24,7 @@ public class OpenFood : MonoBehaviour
     public GameObject vegetableCanvas;
     public GameObject meatCanvas;
     public GameObject cornCanvas;
+    public GameObject promptCanvas;
     public static bool inited;
     public Texture notChosenToggle;
 
@@ -57,7 +58,8 @@ public class OpenFood : MonoBehaviour
 
     void Change()
     {
-        if (TargetFood.targetedFoods.Count >= 4) {
+        if (TargetFood.targetedFoods.Count >= 2) {
+            promptCanvas.SetActive(false);
             foodBackground.SetActive(true);
             if (!inited) InitFood();
         }

@@ -12,6 +12,7 @@ public class LichunIntro : MonoBehaviour
     public GameObject introCanvas;
     public GameObject indoorCanvas;
     public GameObject promptCanvas;
+    public GameObject promptCanvas1;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,7 @@ public class LichunIntro : MonoBehaviour
         } else {
             indoorCanvas.SetActive(true);
             promptCanvas.SetActive(true);
+            promptCanvas1.SetActive(false);
             introCanvas.SetActive(false);
         }
     }
