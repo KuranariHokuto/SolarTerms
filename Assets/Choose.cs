@@ -30,7 +30,7 @@ public class Choose : MonoBehaviour
     {
         RawImage rawImage = GetComponent<RawImage>();
         rawImage.texture = chosenImage;
-        if (ChooseFruit.chosenFruits != null && !ChooseFruit.chosenFruits.Contains(3)) {
+        if (ChooseFruit.chosenFruits != null && !ChooseFruit.chosenFruits.Contains(3) && TargetFood.targetedFoods.Count >= 2) {
             Debug.Log("The choice is correct.");
             promptCanvas1.SetActive(true);
             foodBackground.SetActive(false);

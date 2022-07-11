@@ -5,16 +5,8 @@ using UnityEngine.UI;
 
 public class TargetFood : MonoBehaviour
 {
-    public GameObject target0;
-    public GameObject target2;
-    public GameObject target3;
-    public GameObject target4;
-    public GameObject prompt;
-    public Texture targetTexture0;
-    public Texture targetTexture2;
-    public Texture targetTexture3;
-    public Texture targetTexture4;
     public static List<int> targetedFoods;
+    public GameObject food;
 
     // Start is called before the first frame update
     void Start()
@@ -30,42 +22,79 @@ public class TargetFood : MonoBehaviour
 
     public void Target0() {
         if (!targetedFoods.Contains(0)) {
+            FoodType.ChangeByName("Fruit");
             targetedFoods.Add(0);
-            if (targetedFoods.Count >= 2) {
-                prompt.GetComponent<Text>().text = "恭喜你找到了2个果蔬，点击右下角图标进入选菜界面";
+            OpenFood.availableFruits.Add(0);
+            food.GetComponent<OpenFood>().AddFood(0, "Fruit");
+            if (!OpenFood.inited) {
+                food.GetComponent<OpenFood>().Change();
             }
-            RawImage rawImage = target0.GetComponent<RawImage>();
-            rawImage.texture = targetTexture0;
+        }
+    }
+    public void Target1() {
+        if (!targetedFoods.Contains(1)) {
+            FoodType.ChangeByName("Fruit");
+            targetedFoods.Add(1);
+            OpenFood.availableFruits.Add(1);
+            food.GetComponent<OpenFood>().AddFood(1, "Fruit");
+            if (!OpenFood.inited) {
+                food.GetComponent<OpenFood>().Change();
+            }
         }
     }
     public void Target2() {
         if (!targetedFoods.Contains(2)) {
+            FoodType.ChangeByName("Fruit");
             targetedFoods.Add(2);
-            if (targetedFoods.Count >= 2) {
-                prompt.GetComponent<Text>().text = "恭喜你找到了2个果蔬，点击右下角图标进入选菜界面";
+            OpenFood.availableFruits.Add(2);
+            food.GetComponent<OpenFood>().AddFood(2, "Fruit");
+            if (!OpenFood.inited) {
+                food.GetComponent<OpenFood>().Change();
             }
-            RawImage rawImage = target2.GetComponent<RawImage>();
-            rawImage.texture = targetTexture2;
         }
     }
     public void Target3() {
         if (!targetedFoods.Contains(3)) {
+            FoodType.ChangeByName("Fruit");
             targetedFoods.Add(3);
-            if (targetedFoods.Count >= 2) {
-                prompt.GetComponent<Text>().text = "恭喜你找到了2个果蔬，点击右下角图标进入选菜界面";
+            OpenFood.availableFruits.Add(3);
+            food.GetComponent<OpenFood>().AddFood(3, "Fruit");
+            if (!OpenFood.inited) {
+                food.GetComponent<OpenFood>().Change();
             }
-            RawImage rawImage = target3.GetComponent<RawImage>();
-            rawImage.texture = targetTexture3;
         }
     }
     public void Target4() {
         if (!targetedFoods.Contains(4)) {
+            FoodType.ChangeByName("Vegetable");
             targetedFoods.Add(4);
-            if (targetedFoods.Count >= 2) {
-                prompt.GetComponent<Text>().text = "恭喜你找到了2个果蔬，点击右下角图标进入选菜界面";
+            OpenFood.availableVegetables.Add(4);
+            food.GetComponent<OpenFood>().AddFood(4, "Vegetable");
+            if (!OpenFood.inited) {
+                food.GetComponent<OpenFood>().Change();
             }
-            RawImage rawImage = target4.GetComponent<RawImage>();
-            rawImage.texture = targetTexture4;
+        }
+    }
+    public void Target5() {
+        if (!targetedFoods.Contains(5)) {
+            FoodType.ChangeByName("Vegetable");
+            targetedFoods.Add(5);
+            OpenFood.availableVegetables.Add(5);
+            food.GetComponent<OpenFood>().AddFood(5, "Vegetable");
+            if (!OpenFood.inited) {
+                food.GetComponent<OpenFood>().Change();
+            }
+        }
+    }
+    public void Target6() {
+        if (!targetedFoods.Contains(6)) {
+            FoodType.ChangeByName("Vegetable");
+            targetedFoods.Add(6);
+            OpenFood.availableVegetables.Add(6);
+            food.GetComponent<OpenFood>().AddFood(6, "Vegetable");
+            if (!OpenFood.inited) {
+                food.GetComponent<OpenFood>().Change();
+            }
         }
     }
 }

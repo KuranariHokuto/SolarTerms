@@ -6,11 +6,10 @@ using UnityEngine.UI;
 public class OpenFood : MonoBehaviour
 {
     public GameObject foodBackground;
-    public GameObject cookAndEat;
-    public GameObject[] fruitGrids;
-    public GameObject[] vegetableGrids;
-    public GameObject[] meatGrids;
-    public GameObject[] cornGrids;
+    public static GameObject[] fruitGrids;
+    public static GameObject[] vegetableGrids;
+    public static GameObject[] meatGrids;
+    public static GameObject[] cornGrids;
     public Texture[] foodImages;
     public static List<int> availableFruits;
     public static List<int> availableVegetables;
@@ -45,7 +44,6 @@ public class OpenFood : MonoBehaviour
         currentCornCount = 0;
         inited = false;
         foodBackground.SetActive(false);
-        cookAndEat.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,12 +54,12 @@ public class OpenFood : MonoBehaviour
         }
     }
 
-    void Change()
+    public void Change()
     {
-        if (TargetFood.targetedFoods.Count >= 2) {
+        if (!inited) {
             promptCanvas.SetActive(false);
             foodBackground.SetActive(true);
-            if (!inited) InitFood();
+            InitFood();
         }
     }
 
@@ -83,30 +81,30 @@ public class OpenFood : MonoBehaviour
         for (int i = 0; i < 12; i++) {
             cornGrids[i] = GameObject.Find("CornGrid" + i);
         }
-        for (int i = 0; i < 4; i++) {
-            availableFruits.Add(i);
-        }
-        for (int i = 4; i < 8; i++) {
-            availableVegetables.Add(i);
-        }
-        for (int i = 8; i < 11; i++) {
-            availableMeats.Add(i);
-        }
-        for (int i = 11; i < 12; i++) {
-            availableCorns.Add(i);
-        }
-        for (int i = 0; i < availableFruits.Count; i++) {
-            AddFood(availableFruits[i], "Fruit");
-        }
-        for (int i = 0; i < availableVegetables.Count; i++) {
-            AddFood(availableVegetables[i], "Vegetable");
-        }
-        for (int i = 0; i < availableMeats.Count; i++) {
-            AddFood(availableMeats[i], "Meat");
-        }
-        for (int i = 0; i < availableCorns.Count; i++) {
-            AddFood(availableCorns[i], "Corn");
-        }
+        // for (int i = 0; i < 4; i++) {
+        //     availableFruits.Add(i);
+        // }
+        // for (int i = 4; i < 8; i++) {
+        //     availableVegetables.Add(i);
+        // }
+        // for (int i = 8; i < 11; i++) {
+        //     availableMeats.Add(i);
+        // }
+        // for (int i = 11; i < 12; i++) {
+        //     availableCorns.Add(i);
+        // }
+        // for (int i = 0; i < availableFruits.Count; i++) {
+        //     AddFood(availableFruits[i], "Fruit");
+        // }
+        // for (int i = 0; i < availableVegetables.Count; i++) {
+        //     AddFood(availableVegetables[i], "Vegetable");
+        // }
+        // for (int i = 0; i < availableMeats.Count; i++) {
+        //     AddFood(availableMeats[i], "Meat");
+        // }
+        // for (int i = 0; i < availableCorns.Count; i++) {
+        //     AddFood(availableCorns[i], "Corn");
+        // }
         vegetableCanvas.SetActive(false);
         meatCanvas.SetActive(false);
         cornCanvas.SetActive(false);
