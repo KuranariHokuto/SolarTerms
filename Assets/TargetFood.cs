@@ -24,7 +24,7 @@ public class TargetFood : MonoBehaviour
     public void Target0() {
         if (!targetedFoods.Contains(0)) {
             if (!OpenFood.inited) {
-                food.GetComponent<OpenFood>().Change();
+                food.GetComponent<OpenFood>().Flash();
             }
             targetedFoods.Add(0);
             OpenFood.availableFruits.Add(0);
@@ -35,7 +35,7 @@ public class TargetFood : MonoBehaviour
     public void Target1() {
         if (!targetedFoods.Contains(1)) {
             if (!OpenFood.inited) {
-                food.GetComponent<OpenFood>().Change();
+                food.GetComponent<OpenFood>().Flash();
             }
             targetedFoods.Add(1);
             OpenFood.availableFruits.Add(1);
@@ -46,7 +46,7 @@ public class TargetFood : MonoBehaviour
     public void Target2() {
         if (!targetedFoods.Contains(2)) {
             if (!OpenFood.inited) {
-                food.GetComponent<OpenFood>().Change();
+                food.GetComponent<OpenFood>().Flash();
             }
             targetedFoods.Add(2);
             OpenFood.availableFruits.Add(2);
@@ -57,7 +57,7 @@ public class TargetFood : MonoBehaviour
     public void Target3() {
         if (!targetedFoods.Contains(3)) {
             if (!OpenFood.inited) {
-                food.GetComponent<OpenFood>().Change();
+                food.GetComponent<OpenFood>().Flash();
             }
             targetedFoods.Add(3);
             OpenFood.availableFruits.Add(3);
@@ -68,7 +68,7 @@ public class TargetFood : MonoBehaviour
     public void Target4() {
         if (!targetedFoods.Contains(4)) {
             if (!OpenFood.inited) {
-                food.GetComponent<OpenFood>().Change();
+                food.GetComponent<OpenFood>().Flash();
             }
             targetedFoods.Add(4);
             OpenFood.availableVegetables.Add(4);
@@ -79,7 +79,7 @@ public class TargetFood : MonoBehaviour
     public void Target5() {
         if (!targetedFoods.Contains(5)) {
             if (!OpenFood.inited) {
-                food.GetComponent<OpenFood>().Change();
+                food.GetComponent<OpenFood>().Flash();
             }
             targetedFoods.Add(5);
             OpenFood.availableVegetables.Add(5);
@@ -90,7 +90,7 @@ public class TargetFood : MonoBehaviour
     public void Target6() {
         if (!targetedFoods.Contains(6)) {
             if (!OpenFood.inited) {
-                food.GetComponent<OpenFood>().Change();
+                food.GetComponent<OpenFood>().Flash();
             }
             targetedFoods.Add(6);
             OpenFood.availableVegetables.Add(6);

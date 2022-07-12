@@ -63,6 +63,18 @@ public class OpenFood : MonoBehaviour
         }
     }
 
+    public void Flash()
+    {
+        Change();
+        Invoke("Fade", 1);
+    }
+
+    public void Fade()
+    {
+        promptCanvas.SetActive(true);
+        foodBackground.SetActive(false);
+    }
+
     public void InitFood()
     {
         fruitCanvas.SetActive(true);
