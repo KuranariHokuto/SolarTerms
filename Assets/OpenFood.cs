@@ -56,23 +56,32 @@ public class OpenFood : MonoBehaviour
 
     public void Change()
     {
+        promptCanvas.SetActive(false);
+        foodBackground.SetActive(true);
         if (!inited) {
-            promptCanvas.SetActive(false);
-            foodBackground.SetActive(true);
             InitFood();
         }
     }
 
     public void Flash()
     {
-        Change();
-        Invoke("Fade", 1);
+        promptCanvas.SetActive(false);
+        foodBackground.SetActive(true);
+        Invoke("Fade", 0.5f);
     }
 
     public void Fade()
     {
+        // for (int i = 0; i < 5; i++) {
+        //     System.Threading.Thread.Sleep(500);
+        //     Debug.Log("===============================Fading");
+        //     foodBackground.transform.Translate(new Vector3(100, -80, 0), Space.Self);
+        //     foodBackground.transform.localScale += new Vector3(-0.2f, -0.2f, 0);
+        // }
         promptCanvas.SetActive(true);
         foodBackground.SetActive(false);
+        // foodBackground.transform.Translate(new Vector3(-500, 400, 0), Space.Self);
+        // foodBackground.transform.localScale += new Vector3(1, 1, 0);
     }
 
     public void InitFood()
