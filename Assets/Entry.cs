@@ -8,7 +8,10 @@ public class Entry : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (PlayerPrefs.HasKey("savedScene")) {
+            string savedScene = PlayerPrefs.GetString("savedScene");
+            StartCoroutine(LoadScene(savedScene));
+        }
     }
 
     // Update is called once per frame

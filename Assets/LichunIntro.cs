@@ -7,7 +7,6 @@ public class LichunIntro : MonoBehaviour
 {
     public GameObject lichunIntro;
     public Texture[] lichunIntros;
-    public int size;
     public static int index = 0;
     public GameObject introCanvas;
     public GameObject indoorCanvas;
@@ -16,7 +15,7 @@ public class LichunIntro : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        size = lichunIntros.Length;
+        PlayerPrefs.SetString("savedScene", "LichunScene");
     }
 
     // Update is called once per frame
